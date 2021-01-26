@@ -1,0 +1,15 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd}
+vcom -93 -work work {C:/Users/PK Renaldy/Desktop/Proyek PSD/ADD.vhd}
+vcom -93 -work work {C:/Users/PK Renaldy/Desktop/Proyek PSD/SUB.vhd}
+vcom -93 -work work {C:/Users/PK Renaldy/Desktop/Proyek PSD/MUL.vhd}
+vcom -93 -work work {C:/Users/PK Renaldy/Desktop/Proyek PSD/DIV.vhd}
+vcom -93 -work work {C:/Users/PK Renaldy/Desktop/Proyek PSD/FAKTORIAL.vhd}
+vcom -93 -work work {C:/Users/PK Renaldy/Desktop/Proyek PSD/POW.vhd}
+

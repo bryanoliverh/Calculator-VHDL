@@ -1,0 +1,811 @@
+Analysis & Synthesis report for PROYEKAKHIR
+Sat May 16 20:49:20 2020
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: Top-level Entity: |KALKULATOR
+ 15. Parameter Settings for Inferred Entity Instance: lpm_divide:Div4
+ 16. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
+ 17. Parameter Settings for Inferred Entity Instance: lpm_divide:Div2
+ 18. Parameter Settings for Inferred Entity Instance: lpm_divide:Div3
+ 19. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sat May 16 20:49:19 2020       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; PROYEKAKHIR                                 ;
+; Top-level Entity Name           ; KALKULATOR                                  ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 286                                         ;
+; Total pins                      ; 63                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 7                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; KALKULATOR         ; PROYEKAKHIR        ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; KALKULATOR.vhd                   ; yes             ; User VHDL File               ; C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd                      ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc      ;         ;
+; db/lpm_divide_7am.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/PK Renaldy/Desktop/Proyek PSD/db/lpm_divide_7am.tdf               ;         ;
+; db/sign_div_unsign_dkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/PK Renaldy/Desktop/Proyek PSD/db/sign_div_unsign_dkh.tdf          ;         ;
+; db/alt_u_div_0te.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/PK Renaldy/Desktop/Proyek PSD/db/alt_u_div_0te.tdf                ;         ;
+; db/lpm_divide_fbm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/PK Renaldy/Desktop/Proyek PSD/db/lpm_divide_fbm.tdf               ;         ;
+; db/sign_div_unsign_llh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/PK Renaldy/Desktop/Proyek PSD/db/sign_div_unsign_llh.tdf          ;         ;
+; db/alt_u_div_gve.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/PK Renaldy/Desktop/Proyek PSD/db/alt_u_div_gve.tdf                ;         ;
+; db/lpm_divide_5am.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/PK Renaldy/Desktop/Proyek PSD/db/lpm_divide_5am.tdf               ;         ;
+; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/PK Renaldy/Desktop/Proyek PSD/db/sign_div_unsign_bkh.tdf          ;         ;
+; db/alt_u_div_sse.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/PK Renaldy/Desktop/Proyek PSD/db/alt_u_div_sse.tdf                ;         ;
+; db/lpm_divide_ebm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/PK Renaldy/Desktop/Proyek PSD/db/lpm_divide_ebm.tdf               ;         ;
+; db/sign_div_unsign_klh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/PK Renaldy/Desktop/Proyek PSD/db/sign_div_unsign_klh.tdf          ;         ;
+; db/alt_u_div_eve.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/PK Renaldy/Desktop/Proyek PSD/db/alt_u_div_eve.tdf                ;         ;
+; db/lpm_divide_epo.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/PK Renaldy/Desktop/Proyek PSD/db/lpm_divide_epo.tdf               ;         ;
+; db/abs_divider_nbg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/PK Renaldy/Desktop/Proyek PSD/db/abs_divider_nbg.tdf              ;         ;
+; db/alt_u_div_uve.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/PK Renaldy/Desktop/Proyek PSD/db/alt_u_div_uve.tdf                ;         ;
+; db/lpm_abs_nn9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/PK Renaldy/Desktop/Proyek PSD/db/lpm_abs_nn9.tdf                  ;         ;
+; db/lpm_abs_4p9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/PK Renaldy/Desktop/Proyek PSD/db/lpm_abs_4p9.tdf                  ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 664       ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 1253      ;
+;     -- 7 input functions                    ; 9         ;
+;     -- 6 input functions                    ; 38        ;
+;     -- 5 input functions                    ; 48        ;
+;     -- 4 input functions                    ; 214       ;
+;     -- <=3 input functions                  ; 944       ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 286       ;
+;                                             ;           ;
+; I/O pins                                    ; 63        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 7         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; CLK~input ;
+; Maximum fan-out                             ; 286       ;
+; Total fan-out                               ; 4866      ;
+; Average fan-out                             ; 2.89      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                         ; Entity Name         ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |KALKULATOR                            ; 1253 (323)          ; 286 (286)                 ; 0                 ; 7          ; 63   ; 0            ; |KALKULATOR                                                                                                 ; KALKULATOR          ; work         ;
+;    |lpm_divide:Div0|                   ; 675 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |KALKULATOR|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_epo:auto_generated|  ; 675 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |KALKULATOR|lpm_divide:Div0|lpm_divide_epo:auto_generated                                                   ; lpm_divide_epo      ; work         ;
+;          |abs_divider_nbg:divider|     ; 675 (39)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |KALKULATOR|lpm_divide:Div0|lpm_divide_epo:auto_generated|abs_divider_nbg:divider                           ; abs_divider_nbg     ; work         ;
+;             |alt_u_div_uve:divider|    ; 604 (604)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |KALKULATOR|lpm_divide:Div0|lpm_divide_epo:auto_generated|abs_divider_nbg:divider|alt_u_div_uve:divider     ; alt_u_div_uve       ; work         ;
+;             |lpm_abs_4p9:my_abs_num|   ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |KALKULATOR|lpm_divide:Div0|lpm_divide_epo:auto_generated|abs_divider_nbg:divider|lpm_abs_4p9:my_abs_num    ; lpm_abs_4p9         ; work         ;
+;    |lpm_divide:Div1|                   ; 79 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |KALKULATOR|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_fbm:auto_generated|  ; 79 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |KALKULATOR|lpm_divide:Div1|lpm_divide_fbm:auto_generated                                                   ; lpm_divide_fbm      ; work         ;
+;          |sign_div_unsign_llh:divider| ; 79 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |KALKULATOR|lpm_divide:Div1|lpm_divide_fbm:auto_generated|sign_div_unsign_llh:divider                       ; sign_div_unsign_llh ; work         ;
+;             |alt_u_div_gve:divider|    ; 79 (79)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |KALKULATOR|lpm_divide:Div1|lpm_divide_fbm:auto_generated|sign_div_unsign_llh:divider|alt_u_div_gve:divider ; alt_u_div_gve       ; work         ;
+;    |lpm_divide:Div2|                   ; 52 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |KALKULATOR|lpm_divide:Div2                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_5am:auto_generated|  ; 52 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |KALKULATOR|lpm_divide:Div2|lpm_divide_5am:auto_generated                                                   ; lpm_divide_5am      ; work         ;
+;          |sign_div_unsign_bkh:divider| ; 52 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |KALKULATOR|lpm_divide:Div2|lpm_divide_5am:auto_generated|sign_div_unsign_bkh:divider                       ; sign_div_unsign_bkh ; work         ;
+;             |alt_u_div_sse:divider|    ; 52 (52)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |KALKULATOR|lpm_divide:Div2|lpm_divide_5am:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_sse:divider ; alt_u_div_sse       ; work         ;
+;    |lpm_divide:Div3|                   ; 68 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |KALKULATOR|lpm_divide:Div3                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_ebm:auto_generated|  ; 68 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |KALKULATOR|lpm_divide:Div3|lpm_divide_ebm:auto_generated                                                   ; lpm_divide_ebm      ; work         ;
+;          |sign_div_unsign_klh:divider| ; 68 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |KALKULATOR|lpm_divide:Div3|lpm_divide_ebm:auto_generated|sign_div_unsign_klh:divider                       ; sign_div_unsign_klh ; work         ;
+;             |alt_u_div_eve:divider|    ; 68 (68)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |KALKULATOR|lpm_divide:Div3|lpm_divide_ebm:auto_generated|sign_div_unsign_klh:divider|alt_u_div_eve:divider ; alt_u_div_eve       ; work         ;
+;    |lpm_divide:Div4|                   ; 56 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |KALKULATOR|lpm_divide:Div4                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_7am:auto_generated|  ; 56 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |KALKULATOR|lpm_divide:Div4|lpm_divide_7am:auto_generated                                                   ; lpm_divide_7am      ; work         ;
+;          |sign_div_unsign_dkh:divider| ; 56 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |KALKULATOR|lpm_divide:Div4|lpm_divide_7am:auto_generated|sign_div_unsign_dkh:divider                       ; sign_div_unsign_dkh ; work         ;
+;             |alt_u_div_0te:divider|    ; 56 (56)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |KALKULATOR|lpm_divide:Div4|lpm_divide_7am:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider ; alt_u_div_0te       ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary    ;
++-----------------------------------+-------------+
+; Statistic                         ; Number Used ;
++-----------------------------------+-------------+
+; Independent 9x9                   ; 2           ;
+; Two Independent 18x18             ; 3           ;
+; Independent 18x18 plus 36         ; 1           ;
+; Sum of two 18x18                  ; 1           ;
+; Total number of DSP blocks        ; 7           ;
+;                                   ;             ;
+; Fixed Point Unsigned Multiplier   ; 5           ;
+; Fixed Point Mixed Sign Multiplier ; 3           ;
++-----------------------------------+-------------+
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; TEMPSUB[7..9,11..19]                    ; Merged with TEMPSUB[10]                ;
+; TEMPDIV[7..9,11..19]                    ; Merged with TEMPDIV[10]                ;
+; PECAHAN_BULAT[7..9,11..30]              ; Merged with PECAHAN_BULAT[10]          ;
+; TEMPADD[8,9,11..19]                     ; Merged with TEMPADD[10]                ;
+; VOLT[15..19]                            ; Merged with VOLT[14]                   ;
+; TEMPMUL[15..19]                         ; Merged with TEMPMUL[14]                ;
+; TEMPPOW[15..19]                         ; Merged with TEMPPOW[14]                ;
+; VOLT[14]                                ; Stuck at GND due to stuck port data_in ;
+; TEMPDIV[10]                             ; Stuck at GND due to stuck port data_in ;
+; TEMPADD[10]                             ; Stuck at GND due to stuck port data_in ;
+; DEBIT[7,8,14..19]                       ; Stuck at GND due to stuck port sclear  ;
+; C_TO_K[9]                               ; Stuck at GND due to stuck port data_in ;
+; C_TO_R[9]                               ; Stuck at GND due to stuck port data_in ;
+; DEBIT[9]                                ; Stuck at GND due to stuck port data_in ;
+; C_TO_K[10]                              ; Stuck at GND due to stuck port data_in ;
+; C_TO_R[10]                              ; Stuck at GND due to stuck port data_in ;
+; DEBIT[10]                               ; Stuck at GND due to stuck port data_in ;
+; C_TO_K[11]                              ; Stuck at GND due to stuck port data_in ;
+; C_TO_R[11]                              ; Stuck at GND due to stuck port data_in ;
+; DEBIT[11]                               ; Stuck at GND due to stuck port data_in ;
+; C_TO_F[12]                              ; Stuck at GND due to stuck port data_in ;
+; MS_TO_KMH[12]                           ; Stuck at GND due to stuck port data_in ;
+; C_TO_K[12]                              ; Stuck at GND due to stuck port data_in ;
+; C_TO_R[12]                              ; Stuck at GND due to stuck port data_in ;
+; DEBIT[12]                               ; Stuck at GND due to stuck port data_in ;
+; C_TO_F[13]                              ; Stuck at GND due to stuck port data_in ;
+; MS_TO_KMH[13]                           ; Stuck at GND due to stuck port data_in ;
+; C_TO_K[13]                              ; Stuck at GND due to stuck port data_in ;
+; C_TO_R[13]                              ; Stuck at GND due to stuck port data_in ;
+; DEBIT[13]                               ; Stuck at GND due to stuck port data_in ;
+; MS_TO_KMH[14]                           ; Stuck at GND due to stuck port data_in ;
+; C_TO_K[14]                              ; Stuck at GND due to stuck port data_in ;
+; C_TO_R[14]                              ; Stuck at GND due to stuck port data_in ;
+; C_TO_F[14]                              ; Stuck at GND due to stuck port data_in ;
+; DISTANCE[14]                            ; Stuck at GND due to stuck port data_in ;
+; MS_TO_KMH[15]                           ; Stuck at GND due to stuck port data_in ;
+; C_TO_K[15]                              ; Stuck at GND due to stuck port data_in ;
+; C_TO_R[15]                              ; Stuck at GND due to stuck port data_in ;
+; C_TO_F[15]                              ; Stuck at GND due to stuck port data_in ;
+; DISTANCE[15]                            ; Stuck at GND due to stuck port data_in ;
+; MS_TO_KMH[16]                           ; Stuck at GND due to stuck port data_in ;
+; C_TO_K[16]                              ; Stuck at GND due to stuck port data_in ;
+; C_TO_R[16]                              ; Stuck at GND due to stuck port data_in ;
+; C_TO_F[16]                              ; Stuck at GND due to stuck port data_in ;
+; DISTANCE[16]                            ; Stuck at GND due to stuck port data_in ;
+; MS_TO_KMH[17]                           ; Stuck at GND due to stuck port data_in ;
+; C_TO_K[17]                              ; Stuck at GND due to stuck port data_in ;
+; C_TO_R[17]                              ; Stuck at GND due to stuck port data_in ;
+; C_TO_F[17]                              ; Stuck at GND due to stuck port data_in ;
+; DISTANCE[17]                            ; Stuck at GND due to stuck port data_in ;
+; MS_TO_KMH[18]                           ; Stuck at GND due to stuck port data_in ;
+; C_TO_K[18]                              ; Stuck at GND due to stuck port data_in ;
+; C_TO_R[18]                              ; Stuck at GND due to stuck port data_in ;
+; C_TO_F[18]                              ; Stuck at GND due to stuck port data_in ;
+; DISTANCE[18]                            ; Stuck at GND due to stuck port data_in ;
+; MS_TO_KMH[19]                           ; Stuck at GND due to stuck port data_in ;
+; C_TO_K[19]                              ; Stuck at GND due to stuck port data_in ;
+; C_TO_R[19]                              ; Stuck at GND due to stuck port data_in ;
+; C_TO_F[19]                              ; Stuck at GND due to stuck port data_in ;
+; DISTANCE[19]                            ; Stuck at GND due to stuck port data_in ;
+; TEMPPOW[14]                             ; Stuck at GND due to stuck port data_in ;
+; TEMPMUL[14]                             ; Stuck at GND due to stuck port data_in ;
+; PECAHAN_BULAT[10]                       ; Stuck at GND due to stuck port data_in ;
+; TEMPROOT2[20..31]                       ; Lost fanout                            ;
+; C_TO_R[7,8]                             ; Stuck at GND due to stuck port data_in ;
+; MS_TO_KMH[10,11]                        ; Stuck at GND due to stuck port data_in ;
+; C_TO_F[10,11]                           ; Stuck at GND due to stuck port data_in ;
+; A[0]~reg0                               ; Stuck at GND due to stuck port data_in ;
+; A[1]~reg0                               ; Stuck at GND due to stuck port data_in ;
+; A[2]~reg0                               ; Stuck at GND due to stuck port data_in ;
+; A[3]~reg0                               ; Stuck at GND due to stuck port data_in ;
+; A[4]~reg0                               ; Stuck at GND due to stuck port data_in ;
+; A[5]~reg0                               ; Stuck at GND due to stuck port data_in ;
+; A[6]~reg0                               ; Stuck at GND due to stuck port data_in ;
+; B[0]~reg0                               ; Stuck at GND due to stuck port data_in ;
+; B[1]~reg0                               ; Stuck at GND due to stuck port data_in ;
+; B[2]~reg0                               ; Stuck at GND due to stuck port data_in ;
+; B[3]~reg0                               ; Stuck at GND due to stuck port data_in ;
+; B[4]~reg0                               ; Stuck at GND due to stuck port data_in ;
+; B[5]~reg0                               ; Stuck at GND due to stuck port data_in ;
+; B[6]~reg0                               ; Stuck at GND due to stuck port data_in ;
+; TEMPADD[1..7]                           ; Stuck at GND due to stuck port data_in ;
+; H_TO_S[19]                              ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 176 ;                                        ;
++-----------------------------------------+----------------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                ;
++---------------+---------------------------+------------------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register         ;
++---------------+---------------------------+------------------------------------------------+
+; A[0]~reg0     ; Stuck at GND              ; TEMPADD[1], TEMPADD[2], TEMPADD[3], TEMPADD[4] ;
+;               ; due to stuck port data_in ;                                                ;
+; A[1]~reg0     ; Stuck at GND              ; TEMPADD[5]                                     ;
+;               ; due to stuck port data_in ;                                                ;
+; A[2]~reg0     ; Stuck at GND              ; TEMPADD[6]                                     ;
+;               ; due to stuck port data_in ;                                                ;
+; A[3]~reg0     ; Stuck at GND              ; TEMPADD[7]                                     ;
+;               ; due to stuck port data_in ;                                                ;
++---------------+---------------------------+------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 286   ;
+; Number of registers using Synchronous Clear  ; 201   ;
+; Number of registers using Synchronous Load   ; 20    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 282   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; VOLT[0]                                 ; 2       ;
+; C_TO_F[0]                               ; 2       ;
+; H_TO_S[0]                               ; 2       ;
+; DISTANCE[0]                             ; 2       ;
+; DEBIT[0]                                ; 2       ;
+; C_TO_K[0]                               ; 2       ;
+; MS_TO_KMH[0]                            ; 2       ;
+; C_TO_R[0]                               ; 2       ;
+; TEMPDIV[0]                              ; 2       ;
+; PECAHAN_BULAT[0]                        ; 2       ;
+; TEMPPOW[0]                              ; 1       ;
+; TEMPROOT2[0]                            ; 3       ;
+; TEMPSUB[0]                              ; 1       ;
+; TEMPADD[0]                              ; 2       ;
+; TEMPMUL[0]                              ; 1       ;
+; TEMPROOT[31]                            ; 5       ;
+; TEMPROOT[0]                             ; 1       ;
+; TEMPROOT2[1]                            ; 3       ;
+; TEMPROOT2[3]                            ; 3       ;
+; PECAHAN_KOMA[0]                         ; 1       ;
+; SQRTROOT[1]                             ; 5       ;
+; SQRTROOT[3]                             ; 5       ;
+; PECAHAN_BULAT[31]                       ; 1       ;
+; Total number of inverted registers = 23 ;         ;
++-----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+; 5:1                ; 6 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |KALKULATOR|MS_TO_KMH[14]    ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |KALKULATOR|C_TO_F[12]       ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |KALKULATOR|TEMPMUL[12]      ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |KALKULATOR|TEMPADD[6]       ;
+; 8:1                ; 30 bits   ; 150 LEs       ; 0 LEs                ; 150 LEs                ; Yes        ; |KALKULATOR|TEMPROOT[11]     ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |KALKULATOR|TEMPPOW[11]      ;
+; 6:1                ; 19 bits   ; 76 LEs        ; 0 LEs                ; 76 LEs                 ; Yes        ; |KALKULATOR|PECAHAN_KOMA[15] ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |KALKULATOR|TEMPMUL[3]       ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |KALKULATOR|PECAHAN_BULAT[2] ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |KALKULATOR|TEMPSUB[3]       ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |KALKULATOR|TEMPDIV[3]       ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |KALKULATOR|TEMPPOW[5]       ;
+; 9:1                ; 59 bits   ; 354 LEs       ; 0 LEs                ; 354 LEs                ; Yes        ; |KALKULATOR|SQRTROOT[18]     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 0 LEs                ; 4 LEs                  ; Yes        ; |KALKULATOR|MS_TO_KMH[13]    ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 0 LEs                ; 10 LEs                 ; Yes        ; |KALKULATOR|C_TO_K[10]       ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 0 LEs                ; 12 LEs                 ; Yes        ; |KALKULATOR|C_TO_F[19]       ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 0 LEs                ; 12 LEs                 ; Yes        ; |KALKULATOR|C_TO_K[19]       ;
+; 7:1                ; 20 bits   ; 80 LEs        ; 0 LEs                ; 80 LEs                 ; Yes        ; |KALKULATOR|SUM2[11]~reg0    ;
+; 11:1               ; 14 bits   ; 98 LEs        ; 0 LEs                ; 98 LEs                 ; Yes        ; |KALKULATOR|B[2]~reg0        ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 0 LEs                ; 15 LEs                 ; Yes        ; |KALKULATOR|C_TO_R[10]       ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |KALKULATOR|VOLT[11]         ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |KALKULATOR|C_TO_F[9]        ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |KALKULATOR|DISTANCE[18]     ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |KALKULATOR|VOLT[8]          ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |KALKULATOR|MS_TO_KMH[2]     ;
+; 7:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |KALKULATOR|DEBIT[11]        ;
+; 7:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |KALKULATOR|H_TO_S[10]       ;
+; 7:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |KALKULATOR|DISTANCE[11]     ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |KALKULATOR|MS_TO_KMH[9]     ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |KALKULATOR|C_TO_R[18]       ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |KALKULATOR|DEBIT[19]        ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |KALKULATOR|C_TO_R[3]        ;
+; 7:1                ; 13 bits   ; 52 LEs        ; 0 LEs                ; 52 LEs                 ; Yes        ; |KALKULATOR|H_TO_S[18]       ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |KALKULATOR|DEBIT[5]         ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |KALKULATOR|C_TO_K[2]        ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |KALKULATOR|C_TO_F[8]        ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |KALKULATOR|DISTANCE[4]      ;
+; 15:1               ; 6 bits    ; 60 LEs        ; 54 LEs               ; 6 LEs                  ; Yes        ; |KALKULATOR|SUM[14]~reg0     ;
+; 17:1               ; 5 bits    ; 55 LEs        ; 50 LEs               ; 5 LEs                  ; Yes        ; |KALKULATOR|SUM[9]~reg0      ;
+; 18:1               ; 7 bits    ; 84 LEs        ; 77 LEs               ; 7 LEs                  ; Yes        ; |KALKULATOR|SUM[1]~reg0      ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 2 LEs                ; 8 LEs                  ; Yes        ; |KALKULATOR|TEMPROOT[0]      ;
+; 9:1                ; 5 bits    ; 30 LEs        ; 5 LEs                ; 25 LEs                 ; Yes        ; |KALKULATOR|TEMPROOT2[3]     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |KALKULATOR ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; N              ; 2     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div4 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                ;
+; LPM_WIDTHD             ; 7              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_7am ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 12             ; Untyped                ;
+; LPM_WIDTHD             ; 3              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_fbm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div2 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 9              ; Untyped                ;
+; LPM_WIDTHD             ; 3              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_5am ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div3 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 11             ; Untyped                ;
+; LPM_WIDTHD             ; 3              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_ebm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 8              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_epo ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 286                         ;
+;     ENA               ; 81                          ;
+;     ENA SCLR          ; 181                         ;
+;     ENA SCLR SLD      ; 20                          ;
+;     plain             ; 4                           ;
+; arriav_io_obuf        ; 14                          ;
+; arriav_lcell_comb     ; 1253                        ;
+;     arith             ; 642                         ;
+;         0 data inputs ; 134                         ;
+;         1 data inputs ; 152                         ;
+;         2 data inputs ; 101                         ;
+;         3 data inputs ; 134                         ;
+;         4 data inputs ; 121                         ;
+;     extend            ; 9                           ;
+;         7 data inputs ; 9                           ;
+;     normal            ; 576                         ;
+;         1 data inputs ; 23                          ;
+;         2 data inputs ; 305                         ;
+;         3 data inputs ; 69                          ;
+;         4 data inputs ; 93                          ;
+;         5 data inputs ; 48                          ;
+;         6 data inputs ; 38                          ;
+;     shared            ; 26                          ;
+;         0 data inputs ; 17                          ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 4                           ;
+; arriav_mac            ; 7                           ;
+; boundary_port         ; 63                          ;
+;                       ;                             ;
+; Max LUT depth         ; 67.10                       ;
+; Average LUT depth     ; 35.05                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:06     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Sat May 16 20:48:40 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PROYEKAKHIR -c PROYEKAKHIR
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file kalkulator.vhd
+    Info (12022): Found design unit 1: KALKULATOR-HASIL File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 18
+    Info (12023): Found entity 1: KALKULATOR File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 5
+Info (12127): Elaborating entity "KALKULATOR" for the top level hierarchy
+Info (278001): Inferred 5 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div4" File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 87
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 80
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div2" File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 82
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div3" File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 83
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 51
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div4" File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 87
+Info (12133): Instantiated megafunction "lpm_divide:Div4" with the following parameter: File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 87
+    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_7am.tdf
+    Info (12023): Found entity 1: lpm_divide_7am File: C:/Users/PK Renaldy/Desktop/Proyek PSD/db/lpm_divide_7am.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_dkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_dkh File: C:/Users/PK Renaldy/Desktop/Proyek PSD/db/sign_div_unsign_dkh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_0te.tdf
+    Info (12023): Found entity 1: alt_u_div_0te File: C:/Users/PK Renaldy/Desktop/Proyek PSD/db/alt_u_div_0te.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 80
+Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 80
+    Info (12134): Parameter "LPM_WIDTHN" = "12"
+    Info (12134): Parameter "LPM_WIDTHD" = "3"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_fbm.tdf
+    Info (12023): Found entity 1: lpm_divide_fbm File: C:/Users/PK Renaldy/Desktop/Proyek PSD/db/lpm_divide_fbm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_llh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_llh File: C:/Users/PK Renaldy/Desktop/Proyek PSD/db/sign_div_unsign_llh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_gve.tdf
+    Info (12023): Found entity 1: alt_u_div_gve File: C:/Users/PK Renaldy/Desktop/Proyek PSD/db/alt_u_div_gve.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div2" File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 82
+Info (12133): Instantiated megafunction "lpm_divide:Div2" with the following parameter: File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 82
+    Info (12134): Parameter "LPM_WIDTHN" = "9"
+    Info (12134): Parameter "LPM_WIDTHD" = "3"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_5am.tdf
+    Info (12023): Found entity 1: lpm_divide_5am File: C:/Users/PK Renaldy/Desktop/Proyek PSD/db/lpm_divide_5am.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_bkh File: C:/Users/PK Renaldy/Desktop/Proyek PSD/db/sign_div_unsign_bkh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_sse.tdf
+    Info (12023): Found entity 1: alt_u_div_sse File: C:/Users/PK Renaldy/Desktop/Proyek PSD/db/alt_u_div_sse.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div3" File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 83
+Info (12133): Instantiated megafunction "lpm_divide:Div3" with the following parameter: File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 83
+    Info (12134): Parameter "LPM_WIDTHN" = "11"
+    Info (12134): Parameter "LPM_WIDTHD" = "3"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ebm.tdf
+    Info (12023): Found entity 1: lpm_divide_ebm File: C:/Users/PK Renaldy/Desktop/Proyek PSD/db/lpm_divide_ebm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_klh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_klh File: C:/Users/PK Renaldy/Desktop/Proyek PSD/db/sign_div_unsign_klh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_eve.tdf
+    Info (12023): Found entity 1: alt_u_div_eve File: C:/Users/PK Renaldy/Desktop/Proyek PSD/db/alt_u_div_eve.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 51
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 51
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_epo.tdf
+    Info (12023): Found entity 1: lpm_divide_epo File: C:/Users/PK Renaldy/Desktop/Proyek PSD/db/lpm_divide_epo.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_nbg.tdf
+    Info (12023): Found entity 1: abs_divider_nbg File: C:/Users/PK Renaldy/Desktop/Proyek PSD/db/abs_divider_nbg.tdf Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_uve.tdf
+    Info (12023): Found entity 1: alt_u_div_uve File: C:/Users/PK Renaldy/Desktop/Proyek PSD/db/alt_u_div_uve.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_nn9.tdf
+    Info (12023): Found entity 1: lpm_abs_nn9 File: C:/Users/PK Renaldy/Desktop/Proyek PSD/db/lpm_abs_nn9.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_4p9.tdf
+    Info (12023): Found entity 1: lpm_abs_4p9 File: C:/Users/PK Renaldy/Desktop/Proyek PSD/db/lpm_abs_4p9.tdf Line: 22
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "A[0]" and its non-tri-state driver. File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13035): Inserted always-enabled tri-state buffer between "A[1]" and its non-tri-state driver. File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13035): Inserted always-enabled tri-state buffer between "A[2]" and its non-tri-state driver. File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13035): Inserted always-enabled tri-state buffer between "A[3]" and its non-tri-state driver. File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13035): Inserted always-enabled tri-state buffer between "A[4]" and its non-tri-state driver. File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13035): Inserted always-enabled tri-state buffer between "A[5]" and its non-tri-state driver. File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13035): Inserted always-enabled tri-state buffer between "A[6]" and its non-tri-state driver. File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13035): Inserted always-enabled tri-state buffer between "B[0]" and its non-tri-state driver. File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13035): Inserted always-enabled tri-state buffer between "B[1]" and its non-tri-state driver. File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13035): Inserted always-enabled tri-state buffer between "B[2]" and its non-tri-state driver. File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13035): Inserted always-enabled tri-state buffer between "B[3]" and its non-tri-state driver. File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13035): Inserted always-enabled tri-state buffer between "B[4]" and its non-tri-state driver. File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13035): Inserted always-enabled tri-state buffer between "B[5]" and its non-tri-state driver. File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13035): Inserted always-enabled tri-state buffer between "B[6]" and its non-tri-state driver. File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+Info (13060): One or more bidirectional pins are fed by always enabled tri-state buffers
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "A[0]" is moved to its source File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "A[1]" is moved to its source File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "A[2]" is moved to its source File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "A[3]" is moved to its source File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "A[4]" is moved to its source File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "A[5]" is moved to its source File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "A[6]" is moved to its source File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "B[0]" is moved to its source File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "B[1]" is moved to its source File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "B[2]" is moved to its source File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "B[3]" is moved to its source File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "B[4]" is moved to its source File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "B[5]" is moved to its source File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "B[6]" is moved to its source File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "A[0]~synth" File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13010): Node "A[1]~synth" File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13010): Node "A[2]~synth" File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13010): Node "A[3]~synth" File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13010): Node "A[4]~synth" File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13010): Node "A[5]~synth" File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13010): Node "A[6]~synth" File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13010): Node "B[0]~synth" File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13010): Node "B[1]~synth" File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13010): Node "B[2]~synth" File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13010): Node "B[3]~synth" File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13010): Node "B[4]~synth" File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13010): Node "B[5]~synth" File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+    Warning (13010): Node "B[6]~synth" File: C:/Users/PK Renaldy/Desktop/Proyek PSD/KALKULATOR.vhd Line: 41
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 12 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1418 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 40 output pins
+    Info (21060): Implemented 14 bidirectional pins
+    Info (21061): Implemented 1348 logic cells
+    Info (21062): Implemented 7 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 31 warnings
+    Info: Peak virtual memory: 4908 megabytes
+    Info: Processing ended: Sat May 16 20:49:20 2020
+    Info: Elapsed time: 00:00:40
+    Info: Total CPU time (on all processors): 00:01:11
+
+

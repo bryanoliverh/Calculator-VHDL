@@ -1,0 +1,91 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
+use ieee.math_real.all;
+use ieee.std_logic_arith.all;
+
+entity ScientificCalc is
+port ( a : out STD_LOGIC_VECTOR (6 downto 0);
+       b : out STD_LOGIC_VECTOR (6 downto 0);
+   c : out STD_LOGIC_VECTOR (7 downto 0);
+   d : out STD_LOGIC_VECTOR (6 downto 0);
+   e : out STD_LOGIC_VECTOR (13 downto 0);
+   f : out STD_LOGIC_VECTOR (6 downto 0);
+   g : out STD_LOGIC_VECTOR (15 downto 0);
+   
+   Selector : in STD_LOGIC_VECTOR (1 downto 0);
+   Reset : in STD_LOGIC;
+   Mode : in STD_LOGIC_VECTOR (1 downto 0));
+   
+end ScientificCalc;
+
+architecture behavioral of ScientificCalc is
+signal NUM1 : integer range 0 to 999  := 00;
+signal NUM2 : integer range 0 to 999  := 00;
+signal ADD  : integer range 0 to 199 := 000;
+signal SUB : integer range 0 to 999  := 00;
+signal MUL : integer range 0 to 999999  := 0000;
+signal DIV : integer range 0 to 999999  := 00;
+signal DIRECTORY : integer range 0 to 65535  := 00000;
+
+
+begin
+a <= conv_std_logic_vector(NUM1, 7);
+b <= conv_std_logic_vector(NUM2, 7);
+c <= conv_std_logic_vector(ADD , 8);
+d <= conv_std_logic_vector(SUB , 7);
+e <= conv_std_logic_vector(MUL , 14);
+f <= conv_std_logic_vector(DIV , 7);
+g <= conv_std_logic_vector(DIRECTORY , 16);
+
+process(Reset)
+begin
+    if (Reset ='0' and Mode ="00") then
+  DIRECTORY <= ADD + SUB + MUL + DIV;
+    case Selector is
+        when "00" => ADD <= NUM1 + NUM2;
+        when "01" => SUB <= NUM1 - NUM2;
+        when "10" => MUL <= NUM1 * NUM2;
+        when "11" => DIV <= NUM1 / NUM2;
+    when others =>NULL;
+    end case;
+  
+  else if (Reset ='0' and Mode ="01") then
+  DIRECTORY <= ADD + SUB + MUL + DIV;
+  case Selector is
+        when "00" => ADD <= NUM1 + DIRECTORY;
+        when "01" => SUB <= NUM1 - DIRECTORY;
+        when "10" => MUL <= NUM1 * DIRECTORY;
+        when "11" => DIV <= DIRECTORY / NUM2;
+    
+    when others =>NULL;
+    end case;
+  
+  else if (Reset ='0' and Mode ="10") then
+  DIRECTORY <= ADD + SUB + MUL + DIV;
+  case Selector is
+        when "00" => ADD <= NUM2 + DIRECTORY;
+        when "01" => SUB <= NUM2 - DIRECTORY;
+        when "10" => MUL <= NUM2 * DIRECTORY;
+        when "11" => DIV <= DIRECTORY / NUM2;
+    when others =>NULL;
+    end case;
+  
+else 
+    NUM1 <= 0;
+    NUM2 <= 0;
+  ADD  <= 0;
+  SUB  <= 0;
+  MUL  <= 0;
+  DIV  <= 0;
+  DIRECTORY <= 0;
+  
+end if;
+
+end if;
+
+end if;
+
+end process;
+end behavioral;
